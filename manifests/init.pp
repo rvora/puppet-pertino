@@ -53,7 +53,7 @@ class pertino (
 
     # authorize
     exec { 'auth-pertino':
-      command => "/opt/pertino/pgateway/.auth -u $username -p $password",
+      command => "/opt/pertino/pgateway/.pauth -u $username -p $password",
       cwd     => "/opt/pertino/pgateway",
       require => Package['pertino-client']
     }
