@@ -24,24 +24,12 @@
 #
 # === Parameters
 #
-# [*username*]
-#   Pertino.com username
-#
-# [*password*]
-#   Pertino.com password
-#
 # === Examples
 #
-#  class { pertino::delete:
-#    username => 'joe@example.com',
-#    password => 'SuperSecretPassword',
-#  }
+#  class { pertino::delete: }
 #
 
-class pertino::delete (
-    $username = '',
-    $password = ''
-) {
+class pertino::delete {
 
   #TODO: remove device from network
   service { 'pgateway':
