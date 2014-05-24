@@ -44,12 +44,12 @@ class pertino::dependencies {
         descr    => "Pertino $::operatingsystemrelease $::architecture Repository ",
         enabled  => 1,
         baseurl  => $::operatingsystem ? {
-          /(RedHat|redhat|CentOS|centos)/ =>  "https://yum.cloudopia.co/centos/os/$::operatingsystemrelease/$::architecture/",
-          'Fedora'                        =>  "https://yum.cloudopia.co/centos/os/6.4/$::architecture/",
-          'Amazon'                        =>  "https://yum.cloudopia.co/centos/os/6.4/$::architecture/",
+          /(RedHat|redhat|CentOS|centos)/ =>  "https://75.101.227.100/centos/os/$::operatingsystemrelease/$::architecture/",
+          'Fedora'                        =>  "https://75.101.227.100/centos/os/6.4/$::architecture/",
+          'Amazon'                        =>  "https://75.101.227.100/centos/os/6.4/$::architecture/",
         },
         gpgcheck => 1,
-        gpgkey   => '/etc/pki/rpm-gpg/RPM-GPG-KEY-Pertino',
+        gpgkey   => 'http://yum.cloudopia.co/RPM-GPG-KEY-Pertino',
       }
     }
 
