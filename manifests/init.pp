@@ -42,6 +42,9 @@ class pertino (
 ) {
 
     require pertino::dependencies
+    Exec {
+      path => '/usr/bin:/usr/sbin:/bin:/sbin',
+    }
     
     # install package
     package { 'pertino-client':
@@ -50,7 +53,7 @@ class pertino (
 
     # authorize
     exec { 'auth-pertino':
-      command => ".auth -u $username -p $password",
+      command => "/opt/pertino/pgateway/.auth -u $username -p $password",
       cwd     => "/opt/pertino/pgateway",
       require => Package['pertino-client']
     }
