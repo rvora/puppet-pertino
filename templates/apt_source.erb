@@ -1,0 +1,2 @@
+deb https://apt.cloudopia.co/<%= scope.lookupvar("::operatingsystem").downcase %>/ <%= scope.lookupvar("::lsbdistcodename") %> <%= if scope.lookupvar("::operatingsystem") == "Debian" then "main" else "universe" end %>
+# deb https://apt.cloudopia.co/ubuntu/ lucid universe
